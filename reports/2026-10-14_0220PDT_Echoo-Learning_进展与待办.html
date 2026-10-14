@@ -45,13 +45,13 @@ a{color:var(--accent)}.tw{overflow-x:auto}
   <div class="tile todo"><b>12</b><span>未完成的事项(下表)</span></div>
 </div>
 
-<div class="box ok"><b>一句话:</b>2026-10-12/13 会议约定的第一件事——在不影响现有系统的前提下,平行复制一套隔离的测试环境——截至 2026-10-14 已经基本完成。当前卡在:把共享文件夹共享给张锡,以及提供张锡的 GitHub 用户名以便发组织邀请。</div>
+<div class="box ok"><b>一句话:</b>2026-10-12/13 会议约定的第一件事——在不影响现有系统的前提下,平行复制一套隔离的测试环境——截至 2026-10-14 已经基本完成。当前卡在:把共享文件夹共享给Sam,以及提供Sam的 GitHub 用户名以便发组织邀请。</div>
 
 <h2>一、未完成的事项</h2>
 <div class="tw"><table>
 <tr><th>事项</th><th>谁</th><th>状态 / 卡在哪</th></tr>
-<tr><td>把 Google Drive 共享文件夹&quot;项目 Echoo Learning&quot;共享给张锡(按张锡的 Google 邮箱)</td><td>老师</td><td><span class="st wait">待老师在 Drive 网页操作</span></td></tr>
-<tr><td>提供张锡的 GitHub 用户名,发 Echoo-Learning 组织邀请(角色 Member)</td><td>老师提供用户名;AI 助手发邀请</td><td><span class="st wait">缺张锡的 GitHub 用户名</span></td></tr>
+<tr><td>把 Google Drive 共享文件夹&quot;项目 Echoo Learning&quot;共享给Sam(按Sam的 Google 邮箱)</td><td>老师</td><td><span class="st wait">待老师在 Drive 网页操作</span></td></tr>
+<tr><td>提供Sam的 GitHub 用户名,发 Echoo-Learning 组织邀请(角色 Member)</td><td>老师提供用户名;AI 助手发邀请</td><td><span class="st wait">缺Sam的 GitHub 用户名</span></td></tr>
 <tr><td>登录 DET 老师页和查词老师页,确认能看到 2026-10-14 的测试数据</td><td>老师</td><td><span class="st wait">待老师登录确认</span></td></tr>
 <tr><td>把本机文件夹 D:\项目-合作开发 改名为 D:\项目 Echoo Learning</td><td>AI 助手 + 老师</td><td><span class="st wait">被占用(终端窗口停在该文件夹里),待老师关闭后重试</span></td></tr>
 <tr><td>新云服务器(火山 ECS,名称 echoo-dev,新 SSH 密钥对)</td><td>老师</td><td><span class="st later">未开始(查词后台真正处理提交需要)</span></td></tr>
@@ -59,11 +59,11 @@ a{color:var(--accent)}.tw{overflow-x:auto}
 <tr><td>新的模型 / 语音 API Key;Azure 资源与旧系统共用,选 A 新建资源 / B 共用并限量 / C 先不做</td><td>老师</td><td><span class="st later">待决定;决定前不运行会调用模型的后台程序</span></td></tr>
 <tr><td>给 Anki 测试页上传字母卡音频(52 个文件已在 Drive 素材库)</td><td>AI 助手写工具,老师在终端输入密码</td><td><span class="st later">老师需要时再做</span></td></tr>
 <tr><td>梳理第三方版权内容(题库、真题详解、官方指南、卡片文字等)</td><td>老师</td><td><span class="st later">公司化之前要做</span></td></tr>
-<tr><td>读文档,在本机把环境跑起来,评估现状,决定新架构(14 个问题见 Drive 的《进展与待讨论》)</td><td>张锡</td><td><span class="st later">等待加入组织和 Drive</span></td></tr>
-<tr><td>一页纸合作约定:上线日期、预算、收益分配、知识产权、退出机制</td><td>老师 + 张锡(AI 助手可起草初稿)</td><td><span class="st later">会议未明确,待讨论</span></td></tr>
+<tr><td>读文档,在本机把环境跑起来,评估现状,决定新架构(14 个问题见 Drive 的《进展与待讨论》)</td><td>Sam</td><td><span class="st later">等待加入组织和 Drive</span></td></tr>
+<tr><td>一页纸合作约定:上线日期、预算、收益分配、知识产权、退出机制</td><td>老师 + Sam(AI 助手可起草初稿)</td><td><span class="st later">会议未明确,待讨论</span></td></tr>
 <tr><td>main 分支保护</td><td>—</td><td><span class="st later">GitHub 免费版私有仓库不支持(2026-10-14 01:17 PDT 实测 HTTP 403),只能靠约定:分支 + Pull Request</span></td></tr>
 </table></div>
-<div class="box warn"><b>刻意没做的(会议决定)</b>不迁移大素材库(.apkg、媒体、真题 PDF);不迁移真实学生数据;不敲定 2.0 技术架构(张锡来定);不买域名、不备案;不做实体硬件和大规模推广。</div>
+<div class="box warn"><b>刻意没做的(会议决定)</b>不迁移大素材库(.apkg、媒体、真题 PDF);不迁移真实学生数据;不敲定 2.0 技术架构(Sam来定);不买域名、不备案;不做实体硬件和大规模推广。</div>
 
 <h2>二、做成了什么(按日期、时间、地点)</h2>
 <div class="tw"><table>
@@ -90,12 +90,12 @@ a{color:var(--accent)}.tw{overflow-x:auto}
 <tr><td class="t">01:11</td><td>老师的本机终端(PowerShell)</td><td><span class="who me">老师</span></td><td>输入老师密码运行 `cloud_worker.py --list --reset-password`:后台工人登录新库,读到 1 份待处理提交(只读,没有调用模型)</td><td class="res">终端日志 01:11:41</td></tr>
 <tr><td class="t">01:15–01:18</td><td>GitHub(Echoo_Learning_Site)</td><td><span class="who ai">AI 助手</span></td><td>发布公网测试页(18 个文件:Anki 只带字母卡包、DET 只有 Fill in the Blanks、查词只有考研英语二 2022,外加 3 个老师登录页);发布前检查只含新库的 anon 公开密钥;启用 GitHub Pages</td><td class="res">Git 提交 b88e453(01:15);Pages 构建完成约 01:18</td></tr>
 <tr><td class="t">01:16</td><td>浏览器(公网地址 echoo-learning.github.io)→ 新 Supabase</td><td><span class="who ai">AI 助手</span></td><td>在公网地址上再测一次 DET 自动保存(学生 TSTLIVE),通过,说明跨域访问新库没问题</td><td class="res">页面显示&quot;已自动保存 01:16&quot;</td></tr>
-<tr><td class="t">01:17</td><td>GitHub(私有仓库)</td><td><span class="who ai">AI 助手</span></td><td>尝试给 main 分支加保护规则,GitHub 返回 403:免费版私有仓库不支持;推送给张锡的协作者文档</td><td class="res">GitHub 接口返回;Git 提交 bfdc074</td></tr>
+<tr><td class="t">01:17</td><td>GitHub(私有仓库)</td><td><span class="who ai">AI 助手</span></td><td>尝试给 main 分支加保护规则,GitHub 返回 403:免费版私有仓库不支持;推送给Sam的协作者文档</td><td class="res">GitHub 接口返回;Git 提交 bfdc074</td></tr>
 <tr><td class="t">01:26–01:34</td><td>Google Drive(H:\My Drive)</td><td><span class="who ai">AI 助手</span></td><td>建共享文件夹(当时叫&quot;项目-合作开发-共享&quot;,之后改名,见本表后面的记录),放入讨论材料(PDF)、DET 官方资料、Anki 字母卡音频,共 76 个文件,随后增补到 100 个</td><td class="res">文件扫描未发现密钥或个人信息</td></tr>
 <tr><td class="t">01:36</td><td>本机 platform 目录 → GitHub</td><td><span class="who ai">AI 助手</span></td><td>写&quot;旧系统全景&quot;资料并推送;清掉文档里残留的旧库主机名前缀(只是文字里的前缀,不是密钥)</td><td class="res">Git 提交 4efb82b</td></tr>
 <tr><td class="t">约 01:50</td><td>本机</td><td><span class="who ai">AI 助手</span></td><td>隔离核查:旧位置(两个查词文件夹、云端单词背诵系统、备课-Duolingo、备课-考研英语02二、云同步信息)2026-10-13 12:00 之后被修改的文件为 0 个;线上公开站点 4 个页面没有旧库地址;两个仓库 Git 历史里没有旧库完整地址、旧 anon key、飞书 OpenID</td><td class="res">核查命令输出</td></tr>
-<tr><td class="t">约 02:00</td><td>与老师的对话(本机)</td><td><span class="who me">老师</span></td><td>统一称呼和写法:合作者写张锡;事业写 Echoo Learning;文档里的时间一律写具体的日期、钟点和地点;并要求把本机文件夹和 Drive 共享文件夹都改名为&quot;项目 Echoo Learning&quot;</td><td class="res">老师的消息</td></tr>
-<tr><td class="t">02:00–02:06</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>统一改正所有文档的称呼和命名;新建按日期的进展日志 docs/进展日志.md;重写交接文档、给张锡的资料和老师的待办页</td><td class="res">Git 提交见下一条</td></tr>
+<tr><td class="t">约 02:00</td><td>与老师的对话(本机)</td><td><span class="who me">老师</span></td><td>统一称呼和写法:合作者写Sam;事业写 Echoo Learning;文档里的时间一律写具体的日期、钟点和地点;并要求把本机文件夹和 Drive 共享文件夹都改名为&quot;项目 Echoo Learning&quot;</td><td class="res">老师的消息</td></tr>
+<tr><td class="t">02:00–02:06</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>统一改正所有文档的称呼和命名;新建按日期的进展日志 docs/进展日志.md;重写交接文档、给Sam的资料和老师的待办页</td><td class="res">Git 提交见下一条</td></tr>
 <tr><td class="t">02:06</td><td>Google Drive(H:\My Drive)</td><td><span class="who ai">AI 助手</span></td><td>把共享文件夹从&quot;项目-合作开发-共享&quot;改名为&quot;项目 Echoo Learning&quot;</td><td class="res">改名成功时间 02:06:17</td></tr>
 <tr><td class="t">02:06</td><td>本机 D 盘</td><td><span class="who ai">AI 助手</span></td><td>尝试把 D:\项目-合作开发 改名为 D:\项目 Echoo Learning,Windows 报&quot;文件夹被占用&quot;(原因:有程序打开着该文件夹里的文件,另有终端窗口停在该文件夹里面),未完成</td><td class="res">等老师关闭占用的程序后重试</td></tr>
 <tr><td class="t">02:10</td><td>本机 platform 目录 → GitHub(私有仓库)</td><td><span class="who ai">AI 助手</span></td><td>提交并推送称呼与命名的统一修改、进展日志、重写的交接文档</td><td class="res">Git 提交 a083157</td></tr>
