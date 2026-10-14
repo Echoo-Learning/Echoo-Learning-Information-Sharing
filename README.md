@@ -22,5 +22,4 @@
 
 ## 说明
 
-这里只放**公开可看的、不含私人信息的**版本。含私人事项的老师版不在这里。
-生成程序在私有仓库 `Echoo-Learning/Echoo_Learning` 的 `tools/progress/`。
+页面是公开的,不含密码、Key、邮箱和真实姓名。生成程序在私有仓库 `Echoo-Learning/Echoo_Learning` 的 `tools/progress/`。
