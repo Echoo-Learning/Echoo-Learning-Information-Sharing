@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Echoo Learning｜进展与待办</title>
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--ink:#172235;--muted:#5c6b7b;--line:#dfe6ee;--accent:#215c92;--pale:#eef4fa;--warn:#a85a00;--warnbg:#fff4e0;--ok:#21714e;--okbg:#e6f4ec;--code:#f0f3f7}
+@media(prefers-color-scheme:dark){:root{--bg:#0f151c;--card:#18212b;--ink:#e6edf3;--muted:#9aa7b4;--line:#2a3745;--accent:#6db0ee;--pale:#1c2a38;--warn:#f0b35a;--warnbg:#33281a;--ok:#6fd0a0;--okbg:#17302a;--code:#222d39}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.75 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:26px;margin:0 0 4px}.sub{color:var(--muted);margin:0 0 16px}
+h2{font-size:20px;margin:32px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:16px;margin:18px 0 6px;color:var(--accent)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tile b{display:block;font-size:24px;line-height:1.2}.tile span{color:var(--muted);font-size:13px}
+.tile.ok b{color:var(--ok)}.tile.todo b{color:var(--warn)}
+.box{border-radius:8px;padding:12px 16px;margin:12px 0;border-left:4px solid var(--accent);background:var(--pale)}
+.box.warn{border-color:var(--warn);background:var(--warnbg)}.box.ok{border-color:var(--ok);background:var(--okbg)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;font-size:14px}
+.bar .prog{flex:1;height:8px;background:var(--line);border-radius:6px;overflow:hidden}.bar .prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+details.item{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+details.item>summary{list-style:none;cursor:pointer;padding:11px 14px;display:flex;gap:10px;align-items:flex-start}
+details.item>summary::-webkit-details-marker{display:none}
+summary input{margin-top:6px;width:18px;height:18px;accent-color:var(--accent);flex:none}
+.t{flex:1}.t b{font-size:15.5px}.t small{display:block;color:var(--muted)}
+details.item.done>summary .t b{text-decoration:line-through;color:var(--muted)}
+.body{padding:2px 16px 14px 44px;border-top:1px solid var(--line)}
+.body ol,.body ul{margin:4px 0;padding-left:20px}
+.tag{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:6px;background:var(--pale);color:var(--accent)}
+.tag.now{background:var(--warnbg);color:var(--warn)}
+code{background:var(--code);padding:1px 6px;border-radius:4px;font-family:Consolas,monospace;font-size:13px;word-break:break-all}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0;background:var(--card)}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}th{background:var(--pale)}
+tr.day td{background:var(--pale);font-weight:700;color:var(--accent)}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums}td.res{color:var(--muted);font-size:12.5px}
+.who{display:inline-block;font-size:12px;border-radius:10px;padding:0 8px;white-space:nowrap}
+.who.me{background:var(--warnbg);color:var(--warn)}.who.ai{background:var(--pale);color:var(--accent)}
+.say{border:1px dashed var(--accent);border-radius:8px;padding:8px 12px;margin:8px 0;background:var(--card)}
+.say::before{content:"做完后,复制这句话发给 Claude:";display:block;font-size:12px;color:var(--muted)}
+a{color:var(--accent)}.tw{overflow-x:auto}
+@media(max-width:640px){.body{padding-left:14px}}
+@media print{.bar{display:none}details.item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Echoo Learning｜进展与待办</h1>
+<p class="sub">最后更新:<b>2026-10-14 07:32 PDT(北京时间 2026-10-14 22:32)</b></p>
+
+<div class="box"><b>这份页面怎么更新:</b>"做成了什么"那张表只在末尾<b>追加新的一行</b>(日期、时间、地点、谁、做了什么),不改旧行;"还差什么"随进度打勾或删除。页面里不用相对时间的说法,所有时间都是具体的日期和钟点。<br><small>时间为本机时钟 PDT(UTC-7);北京时间 = PDT + 15 小时(例:PDT 10-14 01:06 = 北京 10-14 16:06)。&quot;约&quot;表示时间不是系统记录的,是按操作顺序推算的。</small></div>
+
+<div class="tiles">
+  <div class="tile ok"><b>3 / 3</b><span>系统学生端在新库测通(Anki、DET、查词;2026-10-14 01:04–01:11 PDT)</span></div>
+  <div class="tile ok"><b>9 / 9</b><span>建库 SQL 在新库全部成功(2026-10-14 约 00:37–00:50 PDT)</span></div>
+  <div class="tile ok"><b>0</b><span>旧位置被修改的文件(核查:2026-10-14 约 01:50 PDT)</span></div>
+  <div class="tile todo"><b id="left">–</b><span>还差的事(下面打勾)</span></div>
+</div>
+
+<div class="box ok"><b>一句话:</b>2026-10-12/13 会议约定的第一件事——在不影响现有系统的前提下,平行复制一套隔离的测试环境——截至 2026-10-14 已经基本完成。<br>
+现在卡在一件只能你本人做的事上:<b>把 Drive 文件夹共享给 Sam</b>。Sam 已加入 GitHub 组织,并对私有仓库有写入权限(2026-10-14 07:31 PDT)。</div>
+
+<div class="bar"><span id="cnt">0 / 0 已完成</span><div class="prog"><i id="bar"></i></div></div>
+
+<h2>一、还差什么</h2>
+<h3>现在就能做</h3>
+<details class="item" open><summary><input type="checkbox" data-s="a1"><span class="t"><b>在 Google Drive 网页里把 <code>项目 Echoo Learning</code> 文件夹共享给Sam</b><span class="tag now">先做</span><small>2 分钟 · 命令行做不了,只能在网页上点</small></span></summary><div class="body"><ol><li>打开 <code>drive.google.com</code> → 我的云端硬盘 → 找到 <code>项目 Echoo Learning</code>(改名前叫 <code>项目-合作开发-共享</code>)。</li><li>右键 → <b>共享</b> → 填Sam的 <b>Google 邮箱</b>(逐个添加,不要用"知道链接的任何人可查看")。</li><li>权限选<b>查看者</b>就够(只需要读;要往里放东西再改编辑者)。</li><li>里面有 100 个文件。先看 <code>讨论/Sam须知-旧系统全景.pdf</code> 和 <code>讨论/2026-10-14-进展与待讨论.pdf</code>。</li></ol></div></details>
+<details class="item"><summary><input type="checkbox" data-s="a4"><span class="t"><b>登录两个老师页,确认能看到测试数据</b><small>5 分钟 · 我没有你的老师密码,看不了</small></span></summary><div class="body"><p>用老师邮箱和密码登录(密码在你的 1Password):</p><table><tr><th>页面</th><th>应该看到</th></tr><tr><td><a href="https://echoo-learning.github.io/Echoo_Learning_Site/det/作答记录-老师登录版本.html" target="_blank">DET 老师页</a></td><td>学生 <code>TSTCLAUDE</code>(Fill in the Blanks 第 1 套,2026-10-14 01:07 PDT 交卷)和 <code>TSTLIVE</code>(同一套,01:16 PDT 进行中)</td></tr><tr><td><a href="https://echoo-learning.github.io/Echoo_Learning_Site/lookup/标记单词结果-老师登录版本.html" target="_blank">查词老师页</a></td><td>缩写 <code>TST</code> 的一条提交(考研英语二 2022,1 个词 plumber,2026-10-14 01:08 PDT)</td></tr></table><p>看不到或登录报错,把页面截图发我(别截到密码)。</p><div class="say">两个老师页:DET ✓/✗,查词 ✓/✗</div></div></details>
+<details class="item"><summary><input type="checkbox" data-s="a5"><span class="t"><b>把本机笔记文件里的敏感内容存进 1Password 并清掉</b><small>3 分钟</small></span></summary><div class="body"><ol><li>检查 Echoo Learning 文件夹里的个人笔记文件,凡是写着密码、Key 的,都存进 1Password 对应条目,再从文件里删掉。</li><li>这类文件不在 Git 里,没有被推送。保险起见,涉及的密码可以在新库里改一次(只影响新库)。</li></ol></div></details>
+<details class="item"><summary><input type="checkbox" data-s="a6"><span class="t"><b>确认 1Password 保险库「Echoo Learning 密钥」里该存的都存了</b><small>5 分钟</small></span></summary><div class="body"><ul><li>新 Supabase 的控制台账号和登录凭据(别用旧库的)</li><li>GitHub 账号的登录凭据和两步验证备份</li><li>以后新建的服务器、飞书机器人、API Key 的凭据</li></ul><p>保险库名统一叫 <b>Echoo Learning 密钥</b>。</p></div></details>
+<details class="item"><summary><input type="checkbox" data-s="a7"><span class="t"><b>(可选)Workspace 名 <code>echoo_learning_dev</code> 要不要改</b><small>1 分钟</small></span></summary><div class="body"><p>它是火山 AIDAP 里 Workspace 的名字,只能你在控制台改:Workspace 设置 → 名称 → 保存。网址里是一串编号(<code>br-hip-mole-…</code>),不是名称,所以改名应该不影响连接(我没试过,改完请用 Anki 老师页登录验证一次)。建议名:<code>echoo-learning-dev</code>(资源名一般不支持空格)。改完告诉我新名字,我更新文档。</p></div></details>
+<details class="item"><summary><input type="checkbox" data-s="a8"><span class="t"><b>(可选)打开新 Supabase 的"算力空闲时自动挂起"</b><small>1 分钟 · 省钱</small></span></summary><div class="body"><p>AIDAP 控制台 → Workspace 设置 → "初始算力设置",现在是<b>关闭</b>。开发库没人用时挂起就不计算力费,代价是第一次访问慢几秒。"删除保护"保持开启。</p></div></details>
+<h3>不急,但查词后台真正跑起来要靠它们</h3>
+<details class="item"><summary><input type="checkbox" data-s="b1"><span class="t"><b>新建云服务器(火山 ECS)</b><small>约 30 分钟 · 付款你点 · 不急</small></span></summary><div class="body"><ol><li>名字 <code>echoo-dev</code>,<b>不要用旧的 chaci-worker,也不要克隆它</b>。华北2(北京)、共享型 2 核 2G、Ubuntu 24.04、20G 盘。</li><li>新建<b>新的 SSH 密钥对</b> <code>echoo_dev_ecs</code>,私钥放 <code>C:\Users\Iugun\.ssh\echoo_dev_ecs</code>。</li><li>安全组只开 22 端口。把公网 IP 告诉我(IP 不是密码)。</li></ol></div></details>
+<details class="item"><summary><input type="checkbox" data-s="b2"><span class="t"><b>飞书:新建测试群 + 新机器人</b><small>约 10 分钟 · 不急</small></span></summary><div class="body"><ol><li>新建群 <code>Echoo-dev 测试群</code>(只有你和Sam),加自定义机器人 <code>echoo-dev-bot</code>。</li><li>Webhook 地址存进 1Password,<b>不要发给我、不要贴聊天</b>。绝不用现有学生群的 Webhook。</li></ol></div></details>
+<details class="item"><summary><input type="checkbox" data-s="b3"><span class="t"><b>新模型 / 语音 API Key,并决定 Azure 怎么办</b><small>约 20 分钟 · 不急 · 先做个决定</small></span></summary><div class="body"><p>Azure 的 Key 按"资源"发:新旧系统如果用同一个 Azure 资源,拿到的就是同一把 Key,做不到真正"不共用"。</p><ul><li><b>A</b>(最干净):在 Azure 新建单独的资源 + 部署 <code>gpt-6-luna-2</code>,专给 dev 用,设用量上限。</li><li><b>B</b>(省事):继续共用资源,给总量设限。</li><li><b>C</b>(推荐,先不做):等Sam定了架构、说不定会换模型供应商再说。</li></ul><p><b>在决定前,请不要运行不带 <code>--list</code> 的 <code>cloud_worker.py</code></b>(会调用旧资源的模型)。</p><div class="say">模型 Key 我选 A / B / C</div></div></details>
+<details class="item"><summary><input type="checkbox" data-s="b4"><span class="t"><b>梳理第三方版权内容,决定哪些能进产品</b><small>你的事 · 公司化之前要做</small></span></summary><div class="body"><p>DET 题目(Arno)、新东方真题详解、DET 官方指南、公开仓库里 Anki 卡片的文字(洪恩识字、Super Why 等)、《穷查理宝典》中英对照。目前都只在内部使用,没有公开到新站点。</p></div></details>
+<details class="item"><summary><input type="checkbox" data-s="b5"><span class="t"><b>(可选)给 Anki 测试页上传字母卡音频,让它有声音</b><small>要我先写小工具,你再在终端输老师密码</small></span></summary><div class="body"><p>音频已经在 Drive 的 <code>素材库/Anki测试素材/字母卡音频-alphabet/</code>(52 个)。现在测试页的字母卡没有声音,不影响其他测试。</p></div></details>
+
+<h3>Sam加入之后(Sam和你一起)</h3>
+<div class="tw"><table>
+<tr><th>事项</th><th>谁</th></tr>
+<tr><td>读文档,按 README 把环境在本机跑起来,记下卡住的地方(都是文档缺的)</td><td><span class="who ai">Sam</span></td></tr>
+<tr><td>评估现状、决定新架构(部署国内/海外、重做/沿用、账号体系、多租户、试点系统)——见 Drive 的 <code>讨论/2026-10-14-进展与待讨论.pdf</code> 里的 14 个问题</td><td><span class="who ai">Sam</span> + <span class="who me">你</span></td></tr>
+<tr><td>开第一次讨论会</td><td><span class="who me">你</span> + <span class="who ai">Sam</span></td></tr>
+<tr><td>写一页纸合作约定:上线日期、预算、收益分配、知识产权、有人退出怎么办(会议里没有明确的;我可以起草初稿)</td><td><span class="who me">你</span> + <span class="who ai">Sam</span></td></tr>
+<tr><td>第一个 Pull Request:改动走分支,<b>不要直接推 main</b>(免费版私有仓库开不了分支保护,只能靠约定)</td><td><span class="who ai">Sam</span> 提,<span class="who me">你</span> 合并</td></tr>
+</table></div>
+
+<h3>我(Claude)接下来做</h3>
+<div class="tw"><table>
+<tr><th>事项</th><th>等什么</th></tr>
+<tr><td>查词后台部署到新服务器、跑通"提交→查词→PDF/Anki→飞书"</td><td>新服务器、飞书测试机器人、模型 Key 的决定</td></tr>
+<tr><td>字母卡音频上传小工具</td><td>你说要</td></tr>
+<tr><td>架构定了之后:起草方案、写代码、写迁移脚本、写测试</td><td>Sam和你的决定</td></tr>
+</table></div>
+
+<div class="box warn"><b>刻意没做的(会议决定)</b>不迁移大素材库(.apkg、媒体、真题 PDF);不迁移真实学生数据;不敲定 2.0 技术架构(Sam来定);不买域名、不备案;不做实体硬件和大规模推广。</div>
+
+<h2>二、做成了什么(按日期、时间、地点)</h2>
+<div class="tw"><table>
+<tr><th>时间</th><th>地点</th><th>谁</th><th>做了什么</th><th>结果 / 依据</th></tr>
+<tr class="day"><td colspan="5">2026-10-13</td></tr>
+<tr><td class="t">更早(未记录具体时间)</td><td>GitHub 网页</td><td><span class="who me">Iugun</span></td><td>注册 GitHub 组织 Echoo-Learning(忆可学境,免费版),主账号 Lauri2005</td><td class="res">据 2026-10-13 备忘记载</td></tr>
+<tr><td class="t">更早(未记录具体时间)</td><td>Iugun的电脑(本机)</td><td><span class="who ai">AI 助手</span></td><td>给旧系统做只读冻结备份(D:\项目-私有\原样备份-冻结-20261013,约 12,000 个文件、2.2 GB,核对数量和大小一致);扫描旧系统密钥和隐私信息;把文件夹分类</td><td class="res">据 2026-10-13 备忘与盘点报告记载</td></tr>
+<tr><td class="t">19:47</td><td>Iugun的电脑,Echoo Learning 的 platform 目录(Claude Code)</td><td><span class="who ai">AI 助手</span></td><td>把三个系统(网页 Anki、DET 多邻国、查词)的源码复制进新仓库,清掉旧 Supabase 地址、公开密钥、老师邮箱、站点网址、7 个学生的飞书 OpenID、硬编码的旧服务器 IP 和 SSH 密钥名、共用的凭据名;丢弃 5 处第三方抓取令牌;统一命名 Echoo_Learning</td><td class="res">Git 提交 4456bb8;`python tools/set-env.py --check` 通过</td></tr>
+<tr><td class="t">19:50</td><td>Iugun的电脑,site 目录</td><td><span class="who ai">AI 助手</span></td><td>准备公开站点仓库(README 写明公网地址 + 占位页)</td><td class="res">Git 提交 f6c5e8d</td></tr>
+<tr><td class="t">23:43</td><td>GitHub 网页(设备码授权)</td><td><span class="who me">Iugun</span></td><td>用 Lauri2005 授权 GitHub CLI(权限:仓库读写、工作流、读组织),组织访问 Echoo-Learning</td><td class="res">记录在 账户与授权记录.md(23:45)</td></tr>
+<tr><td class="t">23:48</td><td>GitHub(命令行)</td><td><span class="who ai">AI 助手</span></td><td>创建并首次推送私有仓库 Echoo-Learning/Echoo_Learning 和公开仓库 Echoo-Learning/Echoo_Learning_Site</td><td class="res">GitHub 记录的推送时间 06:48 UTC</td></tr>
+<tr class="day"><td colspan="5">2026-10-14</td></tr>
+<tr><td class="t">00:02</td><td>旧库的 Supabase Studio(浏览器)→ 本机</td><td><span class="who me">Iugun</span></td><td>在旧库运行只读查询(全是 SELECT),导出 submissions、vocab 的真实结构(5 个 CSV)。旧的建表脚本当年没保存</td><td class="res">CSV 文件时间 00:02;旧库未被修改</td></tr>
+<tr><td class="t">00:02–00:06</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>按导出结果核对重建的建表脚本:字段、类型、默认值、主键、索引、触发器、Realtime、17 个函数全部一致</td><td class="res">Git 提交 324fc64(00:02)、0a1845a(00:06)</td></tr>
+<tr><td class="t">00:28 之前(未记录)</td><td>火山引擎 AIDAP 控制台(浏览器)</td><td><span class="who me">Iugun</span></td><td>新建独立的 Supabase Workspace(名称 echoo_learning_dev,Supabase 1.24、华北2 北京);开启删除保护;Storage 单文件上限设为 300 MB。中途发现进入的是旧 Workspace 的&quot;创建分支&quot;页面(父分支 main 会复制线上数据),及时取消,改走&quot;创建 Workspace&quot;</td><td class="res">新库主机与旧库不同</td></tr>
+<tr><td class="t">00:28</td><td>新 Supabase 的 Studio(浏览器)</td><td><span class="who me">Iugun</span></td><td>在 Authentication 里创建老师登录账号</td><td class="res">Studio 显示创建时间 00:28:04 GMT-0700</td></tr>
+<tr><td class="t">00:35–00:37</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>写 env/dev.json(只放新库的网址、anon 公开密钥、老师邮箱);给 tools/set-env.py 加&quot;拒绝旧库&quot;保护(只存 SHA-256 指纹),用旧地址、旧密钥各实测一次,都被拦下</td><td class="res">Git 提交 3ac26c1(00:37)</td></tr>
+<tr><td class="t">约 00:37–00:50</td><td>新 Supabase 的 Studio SQL Editor(浏览器)</td><td><span class="who me">Iugun</span></td><td>按顺序运行 9 份建库 SQL(det 01、02、03;anki 04、04b、05、06、07、08),全部 Success</td><td class="res">Iugun口头确认</td></tr>
+<tr><td class="t">约 00:45–00:50</td><td>本机 → 新 Supabase(公开接口)</td><td><span class="who ai">AI 助手</span></td><td>外部核对新库:17 个 RPC 函数齐全;匿名角色直接读写 submissions、vocab、anki_test_learners、anki_test_revlog 全部被拒绝(HTTP 401)</td><td class="res">核对脚本输出;Git 提交 8c77449(00:50)</td></tr>
+<tr><td class="t">00:57–00:58</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>写 apps/anki/tools/seed-test-cards.mjs(给测试学生灌少量新卡)</td><td class="res">Git 提交 ea240bc(00:58)</td></tr>
+<tr><td class="t">约 00:58–01:04</td><td>Iugun的本机终端 + 浏览器(localhost)</td><td><span class="who me">Iugun</span></td><td>输入老师密码,灌入测试学生 TEST + 26 张新卡;打开 Anki 学生页学习,登录 Anki 老师页查看进度</td><td class="res">Iugun口头确认&quot;三步都成功&quot;;Git 提交 a70ba9f(01:04)</td></tr>
+<tr><td class="t">01:06–01:07</td><td>本机浏览器(localhost:8766)→ 新 Supabase</td><td><span class="who ai">AI 助手</span></td><td>DET Fill in the Blanks:学生 TSTCLAUDE 填名字、开始、自动保存(01:06:48)、交卷(01:07,页面显示&quot;Iugun已收到&quot;);外部核对新库里有这条记录;生词本添加/读取/删除三个函数通过(测完已清掉测试词)</td><td class="res">新库记录 updated_at 2026-10-14T16:06:48+08:00</td></tr>
+<tr><td class="t">01:08</td><td>本机浏览器(localhost:8766)→ 新 Supabase</td><td><span class="who ai">AI 助手</span></td><td>查词学生页(考研英语二 2022):缩写 TST,标记 plumber,点&quot;发送本次给Iugun&quot;,页面显示&quot;已单独发送(1 条)&quot;</td><td class="res">提交编号 TST10140108;新库记录 16:08 +08:00</td></tr>
+<tr><td class="t">01:11</td><td>Iugun的本机终端(PowerShell)</td><td><span class="who me">Iugun</span></td><td>输入老师密码运行 `cloud_worker.py --list --reset-password`:后台工人登录新库,读到 1 份待处理提交(只读,没有调用模型)</td><td class="res">终端日志 01:11:41</td></tr>
+<tr><td class="t">01:15–01:18</td><td>GitHub(Echoo_Learning_Site)</td><td><span class="who ai">AI 助手</span></td><td>发布公网测试页(18 个文件:Anki 只带字母卡包、DET 只有 Fill in the Blanks、查词只有考研英语二 2022,外加 3 个老师登录页);发布前检查只含新库的 anon 公开密钥;启用 GitHub Pages</td><td class="res">Git 提交 b88e453(01:15);Pages 构建完成约 01:18</td></tr>
+<tr><td class="t">01:16</td><td>浏览器(公网地址 echoo-learning.github.io)→ 新 Supabase</td><td><span class="who ai">AI 助手</span></td><td>在公网地址上再测一次 DET 自动保存(学生 TSTLIVE),通过,说明跨域访问新库没问题</td><td class="res">页面显示&quot;已自动保存 01:16&quot;</td></tr>
+<tr><td class="t">01:17</td><td>GitHub(私有仓库)</td><td><span class="who ai">AI 助手</span></td><td>尝试给 main 分支加保护规则,GitHub 返回 403:免费版私有仓库不支持;推送给Sam的协作者文档</td><td class="res">GitHub 接口返回;Git 提交 bfdc074</td></tr>
+<tr><td class="t">01:26–01:34</td><td>Google Drive(H:\My Drive)</td><td><span class="who ai">AI 助手</span></td><td>建共享文件夹(当时叫&quot;项目-合作开发-共享&quot;,之后改名,见本表后面的记录),放入讨论材料(PDF)、DET 官方资料、Anki 字母卡音频,共 76 个文件,随后增补到 100 个</td><td class="res">文件扫描未发现密钥或个人信息</td></tr>
+<tr><td class="t">01:36</td><td>本机 platform 目录 → GitHub</td><td><span class="who ai">AI 助手</span></td><td>写&quot;旧系统全景&quot;资料并推送;清掉文档里残留的旧库主机名前缀(只是文字里的前缀,不是密钥)</td><td class="res">Git 提交 4efb82b</td></tr>
+<tr><td class="t">约 01:50</td><td>本机</td><td><span class="who ai">AI 助手</span></td><td>隔离核查:旧位置(两个查词文件夹、云端单词背诵系统、备课-Duolingo、备课-考研英语02二、云同步信息)2026-10-13 12:00 之后被修改的文件为 0 个;线上公开站点 4 个页面没有旧库地址;两个仓库 Git 历史里没有旧库完整地址、旧 anon key、飞书 OpenID</td><td class="res">核查命令输出</td></tr>
+<tr><td class="t">约 02:00</td><td>与Iugun的对话(本机)</td><td><span class="who me">Iugun</span></td><td>统一称呼和写法:合作者写Sam;事业写 Echoo Learning;文档里的时间一律写具体的日期、钟点和地点;并要求把本机文件夹和 Drive 共享文件夹都改名为&quot;项目 Echoo Learning&quot;</td><td class="res">Iugun的消息</td></tr>
+<tr><td class="t">02:00–02:06</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>统一改正所有文档的称呼和命名;新建按日期的进展日志 docs/进展日志.md;重写交接文档、给Sam的资料和Iugun的待办页</td><td class="res">Git 提交见下一条</td></tr>
+<tr><td class="t">02:06</td><td>Google Drive(H:\My Drive)</td><td><span class="who ai">AI 助手</span></td><td>把共享文件夹从&quot;项目-合作开发-共享&quot;改名为&quot;项目 Echoo Learning&quot;</td><td class="res">改名成功时间 02:06:17</td></tr>
+<tr><td class="t">02:06</td><td>本机 D 盘</td><td><span class="who ai">AI 助手</span></td><td>尝试把 D:\项目-合作开发 改名为 D:\项目 Echoo Learning,Windows 报&quot;文件夹被占用&quot;(原因:有程序打开着该文件夹里的文件,另有终端窗口停在该文件夹里面),未完成</td><td class="res">等Iugun关闭占用的程序后重试</td></tr>
+<tr><td class="t">02:10</td><td>本机 platform 目录 → GitHub(私有仓库)</td><td><span class="who ai">AI 助手</span></td><td>提交并推送称呼与命名的统一修改、进展日志、重写的交接文档</td><td class="res">Git 提交 a083157</td></tr>
+<tr><td class="t">02:18</td><td>GitHub(命令行)</td><td><span class="who ai">AI 助手</span></td><td>创建公开仓库 Echoo-Learning/Echoo-Learning-Information-Sharing,用来发布&quot;进展与待办&quot;:每次更新生成一个文件名带日期和时间的新页面,旧的保留</td><td class="res">GitHub 返回仓库地址</td></tr>
+<tr><td class="t">约 02:12–02:20</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>把生成&quot;进展与待办&quot;的程序和数据移进仓库 tools/progress/;页面分开生成(公开版不含私人信息);文件名改为&quot;日期_时间PDT_Echoo-Learning_进展与待办&quot;</td><td class="res">见本页所在仓库的 reports/ 目录</td></tr>
+<tr><td class="t">02:20</td><td>GitHub(Echoo-Learning-Information-Sharing)</td><td><span class="who ai">AI 助手</span></td><td>推送第一份公开版&quot;进展与待办&quot;(文件 2026-10-14_0220PDT_Echoo-Learning_进展与待办.html),启用 GitHub Pages;公网地址 https://echoo-learning.github.io/Echoo-Learning-Information-Sharing/</td><td class="res">Pages 构建完成,首页和最新页都返回 200(约 02:21)</td></tr>
+<tr><td class="t">约 02:24–02:33</td><td>与 Iugun 的对话(本机)</td><td><span class="who me">Iugun</span></td><td>要求文档、仓库、Drive 文件夹里不出现任何真实人名,统一用化名:Sam(技术负责人)、Iugun(发起人);学生只用缩写 CBH、HBY,中文名全部删除;并限定只处理 D:\项目-合作开发 和 Drive 的&quot;项目 Echoo Learning&quot;两个文件夹</td><td class="res">Iugun 的消息</td></tr>
+<tr><td class="t">02:33</td><td>本机 D:\项目-合作开发 → GitHub(三个仓库)</td><td><span class="who ai">AI 助手</span></td><td>在 D:\项目-合作开发 里替换文件内容和文件名中的真实人名(共 66 个文件内容、2 个文件名),复查无遗留;正常推送三个仓库;两个公开站点重新构建后线上页面已无真实人名</td><td class="res">Git 提交 95aeb03(platform);Pages 构建完成</td></tr>
+<tr><td class="t">约 02:34–02:36</td><td>Google Drive(H:\My Drive\项目 Echoo Learning)</td><td><span class="who ai">AI 助手</span></td><td>在 Drive 文件夹里替换真实人名(21 个文件内容、2 个文件名),两份 PDF 重新生成;49 个文本和 PDF 文件复查无遗留</td><td class="res">复查脚本输出</td></tr>
+<tr><td class="t">02:35</td><td>本机 D 盘</td><td><span class="who ai">AI 助手</span></td><td>再次尝试把 D:\项目-合作开发 改名为 D:\项目 Echoo Learning,仍被占用(怀疑占用者是本会话自身)</td><td class="res">未完成</td></tr>
+<tr><td class="t">约 02:38–02:45</td><td>本机 platform 目录</td><td><span class="who ai">AI 助手</span></td><td>按 Iugun 的要求:文档里指代 Iugun 本人的&quot;老师&quot;改为 Iugun(系统角色如&quot;老师页&quot;&quot;老师登录版本&quot;保留);不再区分老师版和公开版,只生成一份详细的&quot;进展与待办&quot;页面并公开,取代原来的 latest</td><td class="res">见下一条</td></tr>
+<tr><td class="t">02:48</td><td>本机 D 盘</td><td><span class="who ai">AI 助手</span></td><td>把本机文件夹 D:\项目-合作开发 改名为 D:\项目 Echoo Learning,成功。此前一直&quot;被占用&quot;的原因是 AI 助手自己的命令行当前目录停在其中一个子文件夹里,不是 Iugun 的程序;把命令行挪走后改名成功</td><td class="res">改名成功时间 02:48:11</td></tr>
+<tr><td class="t">02:48–02:50</td><td>本机 platform 目录 → GitHub</td><td><span class="who ai">AI 助手</span></td><td>改名后更新进展页和交接文档(去掉&quot;改名未完成&quot;),重新生成新的进展与待办页面并发布</td><td class="res">见 reports/ 目录里最新的一份</td></tr>
+<tr><td class="t">约 05:19</td><td>与 Iugun 的对话</td><td><span class="who me">Iugun</span></td><td>告知 Sam 的 GitHub 账号</td><td class="res">Iugun 的消息</td></tr>
+<tr><td class="t">05:20</td><td>GitHub(命令行)</td><td><span class="who ai">AI 助手</span></td><td>尝试发 Echoo-Learning 组织邀请,GitHub 返回 403:AI 助手的登录授权只有仓库读写权限,没有&quot;管理组织成员&quot;权限(不扩大这项授权)</td><td class="res">改由 Iugun 在 GitHub 网页上邀请</td></tr>
+<tr><td class="t">05:20–07:31 之间(未记录)</td><td>GitHub 网页</td><td><span class="who me">Iugun</span></td><td>在 GitHub 网页上邀请 Sam 加入 Echoo-Learning 组织(角色 Member);Sam 接受邀请并加入</td><td class="res">07:31 核对:Sam 在组织成员列表里</td></tr>
+<tr><td class="t">07:31</td><td>GitHub(命令行)</td><td><span class="who ai">AI 助手</span></td><td>Sam 反映没有写权限。核对:Sam 是组织成员,对私有仓库 Echoo_Learning 是只读(组织默认权限就是只读)。只给这一个仓库加&quot;写入&quot;权限,另外两个公开仓库保持只读</td><td class="res">接口返回 204;复查权限为 write</td></tr>
+</table></div>
+
+<h2>三、隔离核查:没有影响旧系统(2026-10-14 约 01:50 PDT)</h2>
+<div class="box warn"><b>我不能给"绝对 100%"的保证</b>——最后一道防线是你在网页上的操作(比如 2026-10-14 你差点点下的"创建分支",会把线上数据复制出来)。下面是我实际检查过的结果,每一项都跑过命令。</div>
+<div class="tw"><table>
+<tr><th>检查</th><th>结果</th></tr>
+<tr><td>旧位置(两个查词文件夹、云端单词背诵系统、备课-Duolingo、备课-考研英语02二、云同步信息)在 2026-10-13 12:00 之后被修改的文件</td><td>✅ <b>0 个</b>(复制只读取了源端)</td></tr>
+<tr><td>公开站点 4 个页面里有没有旧 Supabase 地址</td><td>✅ 没有</td></tr>
+<tr><td>两个仓库的全部 Git 历史里有没有旧库完整地址、旧 anon key、飞书 OpenID</td><td>✅ 没有。只发现 4 处是<b>主机名前缀</b>出现在说明文字里(不是密钥,旧站公开网页本来就带着),已清除</td></tr>
+<tr><td>源码里有没有残留(<code>python tools/set-env.py --check</code>)</td><td>✅ 通过</td></tr>
+<tr><td>配置里填了旧库地址或旧密钥会怎样</td><td>✅ <code>set-env.py</code> 直接拒绝运行(2026-10-14 00:37 PDT 实测)</td></tr>
+<tr><td>新库和旧库是不是不同的库</td><td>✅ 主机名不同、anon key 不同、独立 Workspace</td></tr>
+<tr><td>Drive 共享文件夹里有没有密钥/个人信息/旧库地址</td><td>✅ 扫描没有(只有一个 Azure 资源主机名和一个 1Password 引用占位,都不是密钥)</td></tr>
+<tr><td>我有没有访问过旧库</td><td>✅ 根据本次会话的操作记录,所有对 Supabase 的请求只用 <code>env/dev.json</code> 里的新库;旧库只出现在你自己运行的只读导出查询里(这一条是操作记录,不是自动检测)</td></tr>
+</table></div>
+<div class="box"><b>几个小习惯:</b>
+① 在火山或 Supabase 页面操作前,先看主机名:新库是 <code>br-hip-mole-…</code>,不是旧库的。
+② 不要在旧站的公开页面上提交测试数据(会写进正式库)。
+③ 不要在旧 Workspace 里创建分支(父分支 main 会复制线上数据)。
+④ 不确定的控制台操作先问我。</div>
+
+<h2>四、链接速查</h2>
+<div class="tw"><table>
+<tr><th>什么</th><th>在哪里</th></tr>
+<tr><td>公开测试站点</td><td><a href="https://echoo-learning.github.io/Echoo_Learning_Site/" target="_blank">echoo-learning.github.io/Echoo_Learning_Site</a></td></tr>
+<tr><td>私有源码仓库</td><td><a href="https://github.com/Echoo-Learning/Echoo_Learning" target="_blank">github.com/Echoo-Learning/Echoo_Learning</a>(需邀请)</td></tr>
+<tr><td>Drive 共享文件夹</td><td>网页上"我的云端硬盘"里的 <code>项目 Echoo Learning</code>;本机 <code>H:\My Drive\项目 Echoo Learning\</code></td></tr>
+<tr><td>新 Supabase Studio</td><td><a href="https://br-hip-mole-120d4f76.supabase.aidap-global.cn-beijing.volces.com" target="_blank">br-hip-mole-120d4f76…</a>(账号密码在 1Password)</td></tr>
+<tr><td>本机源码</td><td><code>D:\项目 Echoo Learning\platform\</code>(不放进 OneDrive)</td></tr>
+<tr><td>给 AI 的交接文档</td><td><code>platform\docs\交接-搬迁进度-*.md</code>;按日期的完整日志:<code>platform\docs\进展日志.md</code></td></tr>
+<tr><td>给Sam读的</td><td>仓库 <code>docs/00-给协作者-先读这个.md</code> · Drive <code>讨论/</code></td></tr>
+</table></div>
+</div>
+
+<script>
+(function(){
+  var KEY='echoo-todo3-';
+  var boxes=document.querySelectorAll('input[data-s]');
+  function save(k,v){try{localStorage.setItem(KEY+k,v?'1':'0')}catch(e){}}
+  function load(k){try{return localStorage.getItem(KEY+k)==='1'}catch(e){return false}}
+  function refresh(){
+    var n=0;
+    boxes.forEach(function(b){b.closest('details').classList.toggle('done',b.checked);if(b.checked)n++;});
+    document.getElementById('cnt').textContent=n+' / '+boxes.length+' 已完成';
+    document.getElementById('bar').style.width=(boxes.length?n/boxes.length*100:0)+'%';
+    document.getElementById('left').textContent=(boxes.length-n);
+  }
+  boxes.forEach(function(b){
+    b.checked=load(b.dataset.s);
+    b.addEventListener('click',function(e){e.stopPropagation();});
+    b.addEventListener('change',function(){save(b.dataset.s,b.checked);refresh();});
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
